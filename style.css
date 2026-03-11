@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Navegación --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    background: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #d4a373;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-cita {
+    background: #d4a373;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+/* --- Hero --- */
+.hero {
+    height: 95vh;
+    background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
+                url('banner.jpeg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+}
+
+.btn-main {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 35px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* --- SECCIÓN SERVICIOS (Más grande y espaciosa) --- */
+.services {
+    padding: 120px 10%; /* Aumentamos el espacio arriba y abajo (de 80px a 120px) */
+    text-align: center;
+    background: #fdfaf7;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;           /* Más espacio entre las dos fotos */
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 40px;       /* Más aire dentro de la tarjeta */
+    border-radius: 30px; /* Bordes más redondeados y modernos */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    flex: 1;
+    max-width: 600px;    /* Permitimos que la tarjeta sea más ancha */
+    transition: 0.3s;
+}
+
+/* --- IMÁGENES MÁS GRANDES --- */
+.service-img {
+    width: 100%;
+    height: 390px;       /* Aumentamos de 250px a 450px para que luzcan mucho más */
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;     /* Título un poco más grande */
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1.1rem;   /* Texto más legible */
+    color: #666;
+}
