@@ -3,50 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valeria Nails | Spa de Uñas</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="banner.jpeg" rel="stylesheet">
-</head>
+    <title>Valeria Nails | Arte y Elegancia</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nosotros.css"> </head>
 <body>
+
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="logo-reveal-container">
+                <img src="logo.png" alt="Valeria Nails" class="logo-to-reveal">
+                <div class="brush-tip"></div>
+            </div>
+        </div>
+    </div>
 
     <nav class="navbar">
         <div class="logo-container">
             <img src="logo.png" alt="Logo" class="logo-img">
-            <div class="logo-text">VALERIA NAILS</div>
+            <div class="logo-text">𝑉𝐴𝐿𝐸𝑅𝐼𝐴 𝑁𝐴𝐼𝐿𝑆</div>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#" class="btn-cita">Agenda tu Cita</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="nosotros.html">Conócenos</a></li>
+            <li><a href="https://wa.me/TU_NUMERO" class="btn-cita">Agenda tu Cita</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <img src="" alt="" class="hero-logo">
-            
-            <h1>Belleza en tus manos</h1>
-            <p>Experiencias personalizadas de manicura y pedicura.</p>
-            <a href="#" class="btn-main">Conoce más</a>
+  <header id="inicio" class="hero">
+    <div class="hero-content">
+        
+        <h1>Arte y Elegancia en cada detalle</h1>
+        <p>Donde la perfección es nuestra firma</p>
+        
+        <div class="hero-btns">
+            <a href="#servicios" class="btn-hero-primary">Nuestros Servicios</a>
+            <a href="nosotros.html" class="btn-hero-secondary">Conócenos</a>
         </div>
-    </header>
+    </div>
+</header>
+    <section id="servicios" class="services-section">
+    <div class="services-header">
+        <span>Explora nuestro catálogo</span>
+        <h2>Nuestras Especialidades</h2>
+    </div>
 
-    <section class="services">
-        <h2>Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="manos y logo.jpeg" alt="Manicura" class="service-img">
-                <h3>Manicura Premium</h3>
-                <p>Cuidado detallado para resaltar la elegancia de tus manos.</p>
+    <div class="categories-container">
+        <a href="manicura.html" class="category-card" style="background-image: url('manos y logo.jpeg'); text-decoration: none;">
+            <div class="category-overlay">
+                <div class="category-info">
+                    <h3>Manicura</h3>
+                    <p>Cuidado y limpieza profunda</p>
+                    <span class="view-more">Ver detalles y precios +</span>
+                </div>
+                <div class="category-details">
+                    <ul>
+                        <li>Manicura Rusa</li>
+                        <li>Manicura en Seco</li>
+                        <li>Limpieza Pro</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-card">
-                <img src="pedicure.png" alt="Pedicura" class="service-img">
-                <h3>Pedicura Spa</h3>
-                <p>Relajación y estética para tus pies con productos de alta calidad.</p>
-            </div>
-        </div>
-    </section>
+        </a>
 
+        <a href="natural.html" class="category-card" style="background-image: url('pedicure.png'); text-decoration: none;">
+            <div class="category-overlay">
+                <div class="category-info">
+                    <h3>Largo Natural</h3>
+                    <p>Fortalecimiento y color</p>
+                    <span class="view-more">Ver detalles y precios +</span>
+                </div>
+                <div class="category-details">
+                    <ul>
+                        <li>Base Rubber</li>
+                        <li>Kapping Polygel</li>
+                        <li>Semipermanente</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+
+        <a href="extensiones.html" class="category-card" style="background-image: url('manos y logo.jpeg'); text-decoration: none;">
+            <div class="category-overlay">
+                <div class="category-info">
+                    <h3>Extensiones</h3>
+                    <p>Largo y forma perfecta</p>
+                    <span class="view-more">Ver detalles y precios +</span>
+                </div>
+                <div class="category-details">
+                    <ul>
+                        <li>Press On Soft Gel</li>
+                        <li>Polygel Esculpidas</li>
+                        <li>Acrílico</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(() => {
+                document.getElementById("loader").classList.add("fade-out");
+            }, 3000);
+        });
+    </script>
 </body>
+
+<section id="detalle-servicio" class="details-display-section" style="display: none;">
+    <div class="details-container">
+        <button class="close-details" onclick="cerrarDetalles()">×</button>
+        <div id="contenido-dinamico">
+            </div>
+    </div>
+</section>
+
+<script>
+    // Diccionario de información para cada servicio
+    const infoServicios = {
+        manicura: `
+            <div class="detail-layout">
+                <div class="detail-text">
+                    <h2>Manicura Premium</h2>
+                    <p>Un tratamiento completo para la salud y estética de tus manos.</p>
+                    <table class="price-table">
+                        <tr><td>Manicura Rusa</td><td>$XX.XXX</td></tr>
+                        <tr><td>Manicura en Seco</td><td>$XX.XXX</td></tr>
+                        <tr><td>Limpieza Profunda</td><td>$XX.XXX</td></tr>
+                    </table>
+                    <a href="https://wa.me/TU_NUMERO" class="btn-hero-primary">Reservar este servicio</a>
+                </div>
+                <div class="detail-image">
+                    <img src="manos y logo.jpeg" alt="Manicura Detalle">
+                </div>
+            </div>`,
+        natural: `
+            <div class="detail-layout">
+                <div class="detail-text">
+                    <h2>Largo Natural</h2>
+                    <p>Protección y color sobre tu propia uña para un look sofisticado.</p>
+                    <table class="price-table">
+                        <tr><td>Base Rubber</td><td>$XX.XXX</td></tr>
+                        <tr><td>Kapping Polygel</td><td>$XX.XXX</td></tr>
+                        <tr><td>Semipermanente</td><td>$XX.XXX</td></tr>
+                    </table>
+                    <a href="https://wa.me/TU_NUMERO" class="btn-hero-primary">Reservar este servicio</a>
+                </div>
+                <div class="detail-image">
+                    <img src="pedicure.png" alt="Natural Detalle">
+                </div>
+            </div>`,
+        extensiones: `
+            <div class="detail-layout">
+                <div class="detail-text">
+                    <h2>Sistemas de Extensión</h2>
+                    <p>Construcción artesanal para lograr el largo y la forma de tus sueños.</p>
+                    <table class="price-table">
+                        <tr><td>Polygel Esculpidas</td><td>$XX.XXX</td></tr>
+                        <tr><td>Acrílico Esculpidas</td><td>$XX.XXX</td></tr>
+                        <tr><td>Press On Soft Gel</td><td>$XX.XXX</td></tr>
+                    </table>
+                    <a href="https://wa.me/TU_NUMERO" class="btn-hero-primary">Reservar este servicio</a>
+                </div>
+                <div class="detail-image">
+                    <img src="manos y logo.jpeg" alt="Extensiones Detalle">
+                </div>
+            </div>`
+    };
+
+    function mostrarDetalle(tipo) {
+        const seccion = document.getElementById('detalle-servicio');
+        const contenido = document.getElementById('contenido-dinamico');
+        
+        contenido.innerHTML = infoServicios[tipo];
+        seccion.style.display = 'block';
+        
+        // Desplazamiento suave hacia el detalle
+        seccion.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function cerrarDetalles() {
+        document.getElementById('detalle-servicio').style.display = 'none';
+        document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 </html>
