@@ -1,0 +1,219 @@
+/* --- PANTALLA DE CARGA (EL PINCEL) --- */
+.loader-wrapper {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: #000;
+    /* Fondo con brillos dorados (polvo de estrellas) */
+    background-image: 
+        radial-gradient(circle, rgba(212, 163, 115, 0.2) 1px, transparent 1px),
+        radial-gradient(circle, rgba(212, 163, 115, 0.1) 2px, transparent 2px);
+    background-size: 40px 40px, 80px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.logo-reveal-container {
+    position: relative;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El logo se revela de izquierda a derecha */
+.logo-to-reveal {
+    width: 100%;
+    height: auto;
+    clip-path: inset(0 100% 0 0); /* Empieza oculto */
+    animation: revealLogo 3s forwards ease-in-out;
+}
+
+/* El destello del pincel */
+.brush-tip {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    background: #d4a373;
+    filter: blur(12px);
+    box-shadow: 0 0 30px #d4a373, 0 0 60px #fff;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 11;
+    animation: brushMove 3s forwards ease-in-out;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes revealLogo {
+    0% { clip-path: inset(0 100% 0 0); }
+    100% { clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes brushMove {
+    0% { left: 0%; opacity: 0; }
+    15% { opacity: 1; scale: 1.5; }
+    85% { opacity: 1; scale: 1.5; }
+    100% { left: 100%; opacity: 0; }
+}
+
+.loader-wrapper.fade-out {
+    opacity: 0;
+    transform: scale(1.1); /* Efecto de zoom suave al entrar */
+    transition: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+/* --- ESTILOS DE LA PÁGINA NOSOTROS --- */
+.about-page-content {
+    padding: 100px 10%;
+    background: #fff;
+}
+
+.about-grid {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.text-side { flex: 1; min-width: 300px; }
+.text-side span { color: #d4a373; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+.text-side h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0 20px; }
+.text-side p { line-height: 1.8; color: #555; margin-bottom: 15px; }
+
+.image-side { flex: 1; min-width: 300px; }
+.about-main-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px #d4a373;
+}
+
+/* SECCIÓN DE VALORES */
+.values-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.value-item {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+}
+
+.value-icon {
+    font-size: 2rem;
+    color: #d4a373;
+    margin-bottom: 15px;
+}
+
+.value-item h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.value-item p {
+    font-size: 0.95rem;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .values-section { flex-direction: column; }
+}
+
+/* --- SECCIÓN REDES SOCIALES --- */
+.social-section {
+    padding: 80px 10%;
+    background: #fdfaf7; /* Un tono crema muy suave */
+    text-align: center;
+}
+
+.social-title span {
+    color: #d4a373;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.social-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 10px 0 40px;
+}
+
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    background: #fff;
+    padding: 30px;
+    width: 280px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+.social-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4a373;
+    box-shadow: 0 15px 40px rgba(212, 163, 115, 0.2);
+}
+
+.social-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    /* Filtro para darles un toque sutil si quieres que sean negros o dorados */
+    filter: grayscale(100%); 
+    transition: 0.3s;
+}
+
+.social-card:hover .social-icon img {
+    filter: grayscale(0%); /* Vuelven a su color original al pasar el mouse */
+}
+
+.social-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.social-card p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .social-links-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-card { width: 100%; max-width: 350px; }
+}

@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valeria Nails | Spa de Uñas</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="banner.jpeg" rel="stylesheet">
+    <title>Valeria Nails | Arte y Elegancia</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nosotros.css"> 
 </head>
 <body>
+
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="logo-reveal-container">
+                <img src="logo.png" alt="Valeria Nails" class="logo-to-reveal">
+                <div class="brush-tip"></div>
+            </div>
+        </div>
+    </div>
 
     <nav class="navbar">
         <div class="logo-container">
@@ -15,38 +27,172 @@
             <div class="logo-text">VALERIA NAILS</div>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#" class="btn-cita">Agenda tu Cita</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="nosotros.html">Conócenos</a></li>
+            <li><a href="https://wa.me/573172884626?text=Hola%20Valeria!%20Vi%20tu%20página%20web%20y%20quiero%20agendar%20una%20cita%20💅" class="btn-cita">Agenda tu Cita</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
+    <header id="inicio" class="hero">
         <div class="hero-content">
-            <img src="" alt="" class="hero-logo">
-            
-            <h1>Belleza en tus manos</h1>
-            <p>Experiencias personalizadas de manicura y pedicura.</p>
-            <a href="#" class="btn-main">Conoce más</a>
+            <h1>Arte y Elegancia en cada detalle</h1>
+            <p>Donde la perfección es nuestra firma</p>
+            <div class="hero-btns">
+                <a href="#servicios" class="btn-hero-primary">Nuestros Servicios</a>
+                <a href="nosotros.html" class="btn-hero-secondary">Conócenos</a>
+            </div>
         </div>
     </header>
 
-    <section class="services">
-        <h2>Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="manos y logo.jpeg" alt="Manicura" class="service-img">
-                <h3>Manicura Premium</h3>
-                <p>Cuidado detallado para resaltar la elegancia de tus manos.</p>
-            </div>
-            <div class="service-card">
-                <img src="pedicure.png" alt="Pedicura" class="service-img">
-                <h3>Pedicura Spa</h3>
-                <p>Relajación y estética para tus pies con productos de alta calidad.</p>
-            </div>
+    <section id="servicios" class="services-section">
+        <div class="services-header">
+            <span>Explora nuestro catálogo</span>
+            <h2>Nuestras Especialidades</h2>
+        </div>
+
+        <div class="categories-container">
+            <a href="manicura.html" class="category-card card-manicura" style="background-image: url('manos y logo.jpeg'); text-decoration: none;">
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Manicura</h3>
+                        <p>Cuidado y limpieza profunda</p>
+                        <span class="view-more">Ver detalles y precios +</span>
+                    </div>
+                    <div class="category-details">
+                        <ul>
+                            <li>Manicura Rusa</li>
+                            <li>Manicura en Seco</li>
+                            <li>Limpieza Pro</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+
+            <a href="natural.html" class="category-card card-natural" style="background-image: url('pedicure.png'); text-decoration: none;">
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Largo Natural</h3>
+                        <p>Fortalecimiento y color</p>
+                        <span class="view-more">Ver detalles y precios +</span>
+                    </div>
+                    <div class="category-details">
+                        <ul>
+                            <li>Base Rubber</li>
+                            <li>Kapping Polygel</li>
+                            <li>Semipermanente</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+
+            <a href="extensiones.html" class="category-card card-extensiones" style="background-image: url('manos y logo.jpeg'); text-decoration: none;">
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Extensiones</h3>
+                        <p>Largo y forma perfecta</p>
+                        <span class="view-more">Ver detalles y precios +</span>
+                    </div>
+                    <div class="category-details">
+                        <ul>
+                            <li>Press On Soft Gel</li>
+                            <li>Polygel Esculpidas</li>
+                            <li>Acrílico</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
         </div>
     </section>
+
+    <section id="contacto" class="contact-section" style="padding: 80px 8%; text-align: center;">
+        <div class="services-header">
+            <span>¿Lista para tu cambio?</span>
+            <h2>Conéctate con nosotros</h2>
+        </div>
+        <div class="social-grid" style="display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+            
+            <a href="https://wa.me/573172884626?text=Hola%20Valeria!%20Vi%20tu%20página%20web%20y%20quiero%20agendar%20una%20cita%20" 
+               target="_blank" class="social-card whatsapp-tech">
+                <div class="social-icon">
+                    <div class="scan-ring"></div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+                </div>
+                <div class="card-content">
+                    <h3>WhatsApp</h3>
+                    <p>Estableciendo conexión...</p>
+                </div>
+            </a>
+
+            <a href="https://vsco.co/" target="_blank" class="social-card vsco-tech">
+                <div class="social-icon">
+                    <div class="scan-ring-vsco"></div>
+                    <svg viewBox="0 0 100 100" class="vsco-logo-svg">
+                        <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="2" fill="none" />
+                        <g fill="currentColor">
+                            <circle cx="50" cy="22" r="5" />
+                            <circle cx="70" cy="30" r="5" />
+                            <circle cx="78" cy="50" r="5" />
+                            <circle cx="70" cy="70" r="5" />
+                            <circle cx="50" cy="78" r="5" />
+                            <circle cx="30" cy="70" r="5" />
+                            <circle cx="22" cy="50" r="5" />
+                            <circle cx="30" cy="30" r="5" />
+                            <circle cx="50" cy="50" r="12" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Portafolio</h3>
+                    <p>Galería de alta resolución</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <script>
+        // Control del Loader
+        window.addEventListener("load", function () {
+            setTimeout(() => {
+                document.getElementById("loader").classList.add("fade-out");
+            }, 3000);
+        });
+    </script>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <span class="logo-annabel">VALERIA NAILS</span>
+            <p>Arte y Elegancia en cada detalle.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="nosotros.html">Conócenos</a></li>
+            </ul>
+        </div>
+
+       <div class="footer-social">
+    <h4>Síguenos</h4>
+    <div class="social-icons-footer">
+        <a href="https://wa.me/573172884626" target="_blank" class="footer-link-item">WhatsApp</a>
+        <a href="https://www.instagram.com/nails_valeriamora/" target="_blank" class="footer-link-item">Instagram</a>
+        <a href="https://vsco.co/valeria-nails/gallery" target="_blank" class="footer-link-item">VSCO</a>
+    </div>
+</div>
+
+        
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 <span>VALERIA NAILS</span>. Todos los derechos reservados.</p>
+        <p class="design-by">Diseñado con elegancia</p>
+    </div>
+</footer>
 
 </body>
 </html>

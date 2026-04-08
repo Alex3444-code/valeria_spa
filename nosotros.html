@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros | Valeria Nails</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="logo-reveal-container">
+                <img src="logocarga.png" alt="Valeria Nails" class="logo-to-reveal">
+                <div class="brush-tip"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <div class="logo-text">VALERIA NAILS</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="#" class="btn-cita">Agenda tu Cita</a></li>
+        </ul>
+    </nav>
+
+ <section class="about-page-content">
+    <div class="about-grid">
+        <div class="text-side">
+            <span>Nuestra Historia</span>
+            <h2>"Donde la perfección se encuentra con el arte, y cada detalle cuenta tu historia."</h2>
+            <p>En Valeria Nails, entendemos que tus manos son tu carta de presentación. Por eso, hemos creado un santuario dedicado exclusivamente a la belleza y el bienestar.</p>
+            <p>Lo que comenzó como una pasión por el diseño, se convirtió en un estándar de lujo en el cuidado de uñas, utilizando siempre los mejores productos del mercado.</p>
+        </div>
+        <div class="image-side">
+            <img src="manos y logo.jpeg" alt="Trabajo Valeria Nails" class="about-main-img">
+        </div>
+    </div>
+
+    <div class="values-section">
+        <div class="value-item">
+            <div class="value-icon">✦</div>
+            <h3>Calidad Premium</h3>
+            <p>Utilizamos productos seleccionados que garantizan durabilidad y brillo impecable.</p>
+        </div>
+        <div class="value-item">
+            <div class="value-icon">✦</div>
+            <h3>Arte Exclusivo</h3>
+            <p>Cada diseño es único y personalizado según el estilo y personalidad de nuestra clienta.</p>
+        </div>
+        <div class="value-item">
+            <div class="value-icon">✦</div>
+            <h3>Higiene Total</h3>
+            <p>Tu salud es primero. Seguimos los más estrictos protocolos de esterilización.</p>
+        </div>
+    </div>
+</section>
+
+<section class="social-section">
+    <div class="social-title">
+        <span>Conéctate con nosotros</span>
+        <h2>Síguenos en nuestras redes</h2>
+    </div>
+    
+    <div class="social-links-container">
+        <a href="https://www.instagram.com/nails_valeriamora/" target="_blank" class="social-card instagram">
+            <div class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+            </div>
+            <h3>Instagram</h3>
+            <p>Mira nuestros últimos diseños</p>
+        </a>
+
+     <a href="https://www.whatsapp.com/catalog/573172884626/?app_absent=0" target="_blank" class="social-card whatsapp">
+    <div class="social-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </div>
+    <h3>WhatsApp</h3>
+    <p>Agenda tu cita al instante</p>
+</a>
+
+        <a href="https://vsco.co/valeria-nails/gallery" target="_blank" class="social-card vsco-tech">
+    <div class="social-icon">
+        <div class="scan-ring-vsco"></div>
+        <svg viewBox="0 0 100 100" class="vsco-logo-svg">
+            <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="2" fill="none" />
+            <g fill="currentColor">
+                <circle cx="50" cy="22" r="5" />
+                <circle cx="70" cy="30" r="5" />
+                <circle cx="78" cy="50" r="5" />
+                <circle cx="70" cy="70" r="5" />
+                <circle cx="50" cy="78" r="5" />
+                <circle cx="30" cy="70" r="5" />
+                <circle cx="22" cy="50" r="5" />
+                <circle cx="30" cy="30" r="5" />
+                <circle cx="50" cy="50" r="12" />
+            </g>
+        </svg>
+    </div>
+    <div class="card-content">
+        <h3>Portafolio</h3>
+        <p>Galería de alta resolución</p>
+    </div>
+</a>
+    </div>
+</section>
+
+    <script>
+        // Cuando todo cargue, activar la salida
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.classList.add("fade-out");
+            }, 3000); // 3 segundos para que luzca el pincel
+        });
+
+        // Salida forzada por seguridad (4 segundos)
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            if (!loader.classList.contains("fade-out")) {
+                loader.classList.add("fade-out");
+            }
+        }, 4500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,663 @@
+
+
+/* =========================================
+   1. RESET Y BASES
+   ========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    background: #fff; 
+    overflow-x: hidden; 
+}
+
+/* =========================================
+   2. NAVBAR (MENÚ FIJO)
+   ========================================= */
+.navbar {
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 8%; 
+    background: #000; 
+    z-index: 2000;
+}
+
+.logo-container { display: flex; align-items: center; gap: 10px; }
+.logo-img { height: 40px; }
+.logo-text { 
+    font-family: 'Playfair Display', serif; 
+    color: #d4a373; 
+    font-weight: bold; 
+}
+
+.nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
+.nav-links a { 
+    text-decoration: none; 
+    color: #fff; 
+    font-size: 0.9rem; 
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: #d4a373; }
+
+.btn-cita { 
+    background: #d4a373; 
+    padding: 8px 20px; 
+    border-radius: 50px; 
+    font-weight: bold; 
+    color: #fff !important;
+    transition: 0.3s; 
+}
+
+.btn-cita:hover { 
+    background: #fff; 
+    color: #000 !important; 
+}
+
+/* =========================================
+   3. HERO (INICIO CON IMAGEN - INDEX)
+   ========================================= */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('../manos y logo.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 0 20px;
+    animation: fadeInHero 1.5s ease-out;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    color: #d4a373;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-hero-primary {
+    background: #d4a373;
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    border: 1px solid #d4a373;
+    display: inline-block;
+}
+
+.btn-hero-primary:hover {
+    background: transparent;
+    color: #d4a373;
+}
+
+.btn-hero-secondary {
+    background: transparent;
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border: 1px solid #fff;
+    transition: 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* =========================================
+   4. SECCIÓN SERVICIOS (TARJETAS)
+   ========================================= */
+.services-section { 
+    padding: 100px 8%; 
+    background: #fff; 
+    text-align: center; 
+}
+
+.services-header { margin-bottom: 50px; }
+.services-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; }
+.services-header span { 
+    color: #d4a373; 
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+    font-size: 0.8rem; 
+    font-weight: 600;
+}
+
+.categories-container {
+    display: flex; 
+    gap: 25px; 
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.category-card {
+    position: relative; 
+    width: 320px; 
+    height: 450px;
+    border-radius: 15px; 
+    overflow: hidden;
+    background-size: cover; 
+    background-position: center;
+    cursor: pointer; 
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.category-card:hover { transform: translateY(-10px); }
+
+.category-overlay {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end;
+    padding: 30px; 
+    transition: 0.5s ease;
+}
+
+.category-card:hover .category-overlay {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+}
+
+.category-info h3 { 
+    font-family: 'Playfair Display', serif; 
+    color: #d4a373; 
+    font-size: 1.8rem; 
+}
+
+.category-info p { 
+    color: #fff; 
+    font-size: 0.9rem; 
+    margin-bottom: 10px; 
+}
+
+.view-more { 
+    color: #d4a373; 
+    font-weight: bold; 
+    font-size: 0.7rem; 
+    text-transform: uppercase; 
+}
+
+.category-details {
+    max-height: 0; 
+    opacity: 0; 
+    overflow: hidden; 
+    transition: 0.5s ease;
+}
+
+.category-card:hover .category-details {
+    max-height: 300px; 
+    opacity: 1; 
+    margin-top: 20px;
+}
+
+.category-details ul { list-style: none; text-align: left; }
+.category-details ul li {
+    color: #fff; 
+    font-size: 0.85rem; 
+    margin-bottom: 10px;
+    border-left: 2px solid #d4a373; 
+    padding-left: 10px;
+}
+
+/* =========================================
+   5. CONTACTO (ESTILO TECH/HACKER)
+   ========================================= */
+
+/* Estilos comunes para las tarjetas sociales */
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    padding: 30px;
+    background: #fdfaf7;
+    border: 1px solid #eee;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- WHATSAPP ESPECÍFICO --- */
+.social-icon img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.4s;
+}
+
+.scan-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    border: 2px solid #25d366;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.whatsapp-tech:hover {
+    background: #000;
+    border-color: #25d366;
+    transform: scale(1.05);
+}
+
+.whatsapp-tech:hover .social-icon img {
+    filter: grayscale(0%);
+    transform: rotate(360deg);
+}
+
+.whatsapp-tech:hover h3 { color: #25d366; }
+.whatsapp-tech:hover p { color: #fff; }
+.whatsapp-tech:hover .scan-ring { animation: techPulse 1.5s infinite; opacity: 1; }
+
+/* --- VSCO ESPECÍFICO --- */
+.vsco-logo-svg {
+    width: 100%;
+    height: 100%;
+    color: #333; /* Color inicial oscuro */
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scan-ring-vsco {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    border: 2px solid #d4a373;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.vsco-tech:hover {
+    background: #000;
+    border-color: #d4a373;
+    transform: scale(1.05);
+}
+
+.vsco-tech:hover .vsco-logo-svg {
+    color: #d4a373; /* Cambia a dorado */
+    transform: rotate(90deg) scale(1.1);
+}
+
+.vsco-tech:hover h3 { color: #d4a373; }
+.vsco-tech:hover p { color: #fff; }
+.vsco-tech:hover .scan-ring-vsco { animation: techPulse 1.5s infinite; opacity: 1; }
+
+/* =========================================
+   6. ANIMACIONES Y RESPONSIVO
+   ========================================= */
+@keyframes techPulse {
+    0% { width: 60px; height: 60px; opacity: 1; }
+    100% { width: 120px; height: 120px; opacity: 0; }
+}
+
+@keyframes fadeInHero {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero-btns { flex-direction: column; gap: 10px; align-items: center; }
+    .nav-links { display: none; }
+    .social-grid { flex-direction: column; align-items: center; }
+}
+
+/* =========================================
+   7. ESTILOS PARA PÁGINAS DE DETALLE (SERVICIOS)
+   ========================================= */
+
+/* Cabecera simple para las subpáginas */
+.service-header-simple {
+    height: 50vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    margin-top: 60px; /* Espacio para la navbar fija */
+    position: relative;
+}
+
+.service-header-simple::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de cabecera */
+}
+
+.service-header-simple h1 { 
+    position: relative;
+    font-family: 'Playfair Display', serif; 
+    font-size: 4rem; 
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Contenedor principal de detalles */
+.detail-content { 
+    padding: 80px 10%; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas */
+    gap: 80px; 
+    background: #fff;
+    align-items: center;
+}
+
+.detail-text h2 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.8rem; 
+    margin-bottom: 25px; 
+    color: #1a1a1a;
+}
+
+.detail-text p { 
+    color: #666; 
+    font-size: 1.1rem;
+    line-height: 1.8; 
+    margin-bottom: 40px; 
+}
+
+/* Tabla de precios elegante */
+.price-box { 
+    list-style: none; 
+    margin-bottom: 50px; 
+    padding: 0;
+}
+
+.price-box li { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 18px 0; 
+    border-bottom: 1px solid #eee; 
+    transition: 0.3s;
+}
+
+.price-box li:hover {
+    padding-left: 10px;
+    border-bottom-color: #d4a373;
+}
+
+.price-box li strong { 
+    color: #d4a373; 
+    font-size: 1.2rem; 
+    font-weight: 600;
+}
+
+.price-box li span { 
+    font-weight: 700; 
+    color: #1a1a1a; 
+    font-size: 1.1rem;
+}
+
+/* Contenedor de la imagen lateral */
+.detail-img-container {
+    position: relative;
+}
+
+.detail-img-container img { 
+    width: 100%; 
+    border-radius: 20px; 
+    box-shadow: 20px 20px 0px #d4a373; /* Cuadro dorado decorativo */
+    display: block;
+    object-fit: cover;
+}
+
+/* Botón de agendar dentro de la página de servicio */
+.btn-agendar-servicio {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-agendar-servicio:hover {
+    background: #d4a373;
+    transform: translateY(-3px);
+}
+
+/* Ajustes para móviles */
+@media (max-width: 968px) {
+    .detail-content { 
+        grid-template-columns: 1fr; /* Una sola columna en celular */
+        text-align: center; 
+        gap: 40px;
+    }
+    
+    .price-box li {
+        flex-direction: row;
+    }
+    
+    .service-header-simple h1 {
+        font-size: 2.5rem;
+    }
+
+    .detail-img-container img {
+        box-shadow: 10px 10px 0px #d4a373;
+    }
+}
+
+/* =========================================
+   ESTILO DE TEXTO ENRIQUECIDO (BOLD STYLE)
+   ========================================= */
+.price-box li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.service-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-width: 85%;
+}
+
+/* Título con negrilla máxima y color negro */
+.service-info strong {
+    color: #000;
+    font-weight: 700; /* Negrilla intensa */
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 3px;
+    display: block;
+}
+
+/* Descripción con estilo semi-bold para que no pierda fuerza */
+.service-info p {
+    color: #000000; /* Un gris casi negro para mantener la elegancia */
+    font-weight: 600; /* Negrilla media para que se vea robusto pero legible */
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Espaciado entre párrafos en Dipping System */
+.service-info p + p {
+    margin-top: 4px;
+}
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================= */
+.main-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 8% 20px;
+    border-top: 1px solid #d4a373; /* Línea dorada sutil arriba */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Logo en el footer con la fuente Annabel */
+.logo-annabel {
+    font-family: 'AnnabelCustom', serif;
+    font-size: 1.8rem;
+    color: #d4a373; /* Dorado para que resalte sobre el negro */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 0.9rem;
+    color: #bbb;
+    max-width: 250px;
+}
+
+.footer-links h4, .footer-social h4 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-links ul li a:hover {
+    color: #d4a373;
+    padding-left: 5px;
+}
+
+.social-icons-footer a {
+    color: #bbb;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.social-icons-footer a:hover {
+    color: #d4a373;
+}
+
+/* Parte inferior: Derechos Reservados */
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #222;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.footer-bottom span {
+    font-family: 'AnnabelCustom', serif;
+    color: #d4a373;
+    font-size: 1rem;
+}
+
+.design-by {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-logo p {
+        margin: 0 auto;
+    }
+}
